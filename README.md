@@ -8,13 +8,14 @@ Sentiti libero di aprire un [issue](https://github.com/progettoeccellenza/GradLi
 ## Descrizione dei Files:
 - _src/GradList.php:_ sorgente di GradList
 - _example/index.php:_ esempio di utilizzo di GradList
-- _example/dataset/example_dataset.csv:_ dataset di esempio da utilizzare per un'installazione locale
+- _example/dataset/example_dataset.csv:_ dataset di esempio da utilizzare per un'installazione locale ([maggiori informazioni sul dataset di esempio](https://github.com/progettoeccellenza/GradList/tree/master/example/dataset))
 
 #### Nota rispetto alla versione utilizzata da Progetto Eccellenza
 Ci sono alcune differenze rispetto alla versione pubblicata qui e quella utilizzata effettivamente dal server.  
-Le modifiche apportate non influenzano il risultato dell'esecuzione e servono solo per migliorare la leggibilità del codice.
+Le modifiche apportate non influenzano il risultato dell'esecuzione e servono solo per migliorare la leggibilità del codice.  
+Principali differenze:
 - I nomi delle tabelle sul server e la loro struttura è differente da quella qui proposta.
-- Gli array nei cicli *foreach()* di *GradList::correctLists()* vengono passati per riferimento nella versione su server.
+- Gli array nei cicli *foreach()* di *GradList::correctLists()* vengono passati per riferimento nella versione sul server.
 
 ## Installazione
 Per poter utilizzare lo script in locale è necessario installare PHP versione 5.3, in quanto vengono utilizzate le funzioni *mysql_*, non presenti nelle versioni successive.  
@@ -55,14 +56,12 @@ Si può poi utilizzare il codice presente in */example/index.php* per testare il
 #### Nota
 Importare un file *.csv* con PHP mantendendo i valori della prima riga come chiavi di un array associativo:  
 ```PHP
-<?
-    // You're supposed to define $csv_example_dataset = "/path/to/example_dataset.csv"
-    $csv_example_dataset = array_map('str_getcsv', file($path_example_dataset));
-    array_walk($csv_example_dataset, function(&$a) use ($csv_example_dataset) {
-      $a = array_combine($csv_example_dataset[0], $a);
-    });
-    // Remove first row, used as header
-    array_shift($csv);
-?>
+// You're supposed to define $path_example_dataset = "/path/to/example_dataset.csv"
+$csv_example_dataset = array_map('str_getcsv', file($path_example_dataset));
+array_walk($csv_example_dataset, function(&$a) use ($csv_example_dataset) {
+  $a = array_combine($csv_example_dataset[0], $a);
+});
+// Remove first row, used as header
+array_shift($csv);
 ```
 Utilizzare PHP 5.3 per eseguire questo codice in quanto il callback di *array_walk()* è una closure.  
