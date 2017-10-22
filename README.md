@@ -20,7 +20,7 @@ Le modifiche apportate non influenzano il risultato dell'esecuzione e servono so
 Per poter utilizzare lo script in locale è necessario installare PHP versione 5.3, in quanto vengono utilizzate le funzioni *mysql_*, non presenti nelle versioni successive.  
 L'array generato da *GradList::getTempList()* può essere riprodotto importando il dataset di esempio presente in *example/dataset/example_dataset.csv*.  
 Si può quindi costruire direttamente l'array da passare a *GradList::correctLists()* che deve avere la seguente struttura:
-```JSON
+```
 Array {
   Corso1 : Array {
     admitted: Array {
