@@ -52,7 +52,7 @@ Array {
   ...
 }
 ```
-Utilizzare infini il codice presente in */example/index.php* per testare il funzionamento dello script.  
+Utilizzare infine il codice presente in */example/index.php* per testare il funzionamento dello script.  
 #### Nota
 Importare un file *.csv* con PHP mantendendo i valori della prima riga come chiavi di un array associativo:  
 ```PHP
