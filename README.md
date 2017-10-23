@@ -52,7 +52,7 @@ Array {
   ...
 }
 ```
-Si può poi utilizzare il codice presente in */example/index.php* per testare il funzionamento dello script.  
+Utilizzare infini il codice presente in */example/index.php* per testare il funzionamento dello script.  
 #### Nota
 Importare un file *.csv* con PHP mantendendo i valori della prima riga come chiavi di un array associativo:  
 ```PHP
@@ -62,6 +62,6 @@ array_walk($csv_example_dataset, function(&$a) use ($csv_example_dataset) {
   $a = array_combine($csv_example_dataset[0], $a);
 });
 // Remove first row, used as header
-array_shift($csv);
+array_shift($csv_example_dataset);
 ```
 Utilizzare PHP >= 5.3 per eseguire questo codice in quanto il callback di *array_walk()* è una closure.  
