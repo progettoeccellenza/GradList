@@ -68,8 +68,8 @@ Utilizzare PHP >= 5.3 per eseguire questo codice in quanto il callback di *array
 
 ## Changelog
 Changelog (rispetto alle versioni interne 1.1, 1.2, 1.3, 1.4)
-- Conversione ad oggetti (v1.1)
-- Numero dinamico di studenti ammessi ad un corso (v1.1)
-- GradList::correctLists() ammette gli studenti non ammessi aventi lo stesso punteggio dell'ultimo ammesso per equità (v1.2)
-- Ottimizzazione del numero di ripetizioni dei cicli per ridurre i tempi di esecuzione (v1.3)
-- Major bugfixes (v1.4)
+- Conversione ad oggetti (*v1.1*)
+- Numero dinamico di studenti ammessi ad un corso (*v1.1*)
+- *GradList::correctLists()* ammette gli studenti non ammessi aventi lo stesso punteggio dell'ultimo ammesso per equità (*v1.2*)
+- Ottimizzazione del numero di ripetizioni dei cicli per ridurre i tempi di esecuzione (*v1.3*)
+- Major bugfixes (*v1.4*)
