@@ -59,13 +59,6 @@ abstract class GradList {
     $subscriptions_table = mysql_query("SELECT * FROM subscriptions_table WHERE f_c = {$class} OR s_c = {$class}");
     while($subscription = mysql_fetch_array($subscriptions_table)) {
       /*
-        * @param CID
-        * @desc It contains current user ID, a seven-digits number
-        *  @param schoolcode: identificates the school in database
-        *  @param studentcode: identificates the student in his school's registry
-      */
-      $subscription['CID'] = explode("_", $subscription['CID']);
-      /*
         * @query Get from database student personal information
         * @table registry: contains users' personal details.
         * @param ID: contains current user ID, a seven-digits number
