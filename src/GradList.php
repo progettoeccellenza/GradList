@@ -60,18 +60,18 @@ abstract class GradList {
     while($subscription = mysql_fetch_array($subscriptions_table)) {
       /*
         * @param CID
-        * @desc It contains current user ID formatted as [schoolcode]_[studentcode]
+        * @desc It contains current user ID, a seven-digits number
         *  @param schoolcode: identificates the school in database
         *  @param studentcode: identificates the student in his school's registry
       */
       $subscription['CID'] = explode("_", $subscription['CID']);
       /*
         * @query Get from database student personal information
-        * @table registry_[school]: contains users' personal details.
-        * @param ID: current user's ID (without "[schoolcode]_")
+        * @table registry: contains users' personal details.
+        * @param ID: contains current user ID, a seven-digits number
       */
-      $student_registry = mysql_fetch_array(mysql_query("SELECT * FROM registry_".($subscription['CID'][0] == 1 ?  "School1" : ($subscription['CID'][0] == 2 ? "School2" : "School3"))." WHERE ID='{$subscription['CID'][1]}'"));
-      $student['ID'] = implode("_", $subscription['CID']);
+      $student_registry = mysql_fetch_array(mysql_query("SELECT * FROM registry WHERE ID='{$subscription['CID']}'"));
+      $student['ID'] = $subscription['CID'];
       $student['f_c'] = $subscription['f_c'];
       $student['s_c'] = $subscription['s_c'];
       $student['Name'] = $student_registry['Name'];
