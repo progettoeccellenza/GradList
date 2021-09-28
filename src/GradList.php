@@ -87,7 +87,12 @@ abstract class GradList {
         * @param lett_f_c_mark or lett_s_c_mark
         * @desc Motivational Letter score
       */
-      $student['Score'] = ($subscription['f_c'] != $class ? $subscription['s_c_mark'] : $subscription['f_c_mark']) + ($subscription['f_c'] != $class ? $subscription['lett_s_c_mark'] : $subscription['lett_f_c_mark']) + Register::getAverageMark($student_registry['Average'], $student_registry['Promotion']);
+      /*
+        * A.S. 2021-22
+        * RIMOSSA VALUTAZIONE DELLA MEDIA
+      */
+      //$student['Score'] = ($subscription['f_c'] != $class ? $subscription['s_c_mark'] : $subscription['f_c_mark']) + ($subscription['f_c'] != $class ? $subscription['lett_s_c_mark'] : $subscription['lett_f_c_mark']) + Register::getAverageMark($student_registry['Average'], $student_registry['Promotion']);
+      $student['Score'] = ($subscription['f_c'] != $class ? $subscription['s_c_mark'] : $subscription['f_c_mark']) + ($subscription['f_c'] != $class ? $subscription['lett_s_c_mark'] : $subscription['lett_f_c_mark']);
       // If student was not present to the interview or had not compiled the Motivational Letter, he is excluded from the Graduated List
       // This happens either for first or second choice
       if($subscription['f_c'] == $class && ($subscription['f_c_mark'] == 0 || $subscription['lett_f_c_mark'] == 0)) {
