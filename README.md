@@ -1,5 +1,5 @@
 # GradList
-[![Version](https://img.shields.io/badge/version-1.5-green.svg)]() [![PHPVersion](https://img.shields.io/badge/php-5.3-blue.svg)]()  
+[![Version](https://img.shields.io/badge/version-1.6-green.svg)]() [![PHPVersion](https://img.shields.io/badge/php-5.3-blue.svg)]()  
 ## Di cosa si tratta
 Questo script viene utilizzato per generare automaticamente le Graduatorie di Progetto Eccellenza.   
 _NB:_ Il codice viene pubblicato per trasparenza e perché possa essere riutilizzato in altri progetti simili a questo.  
@@ -74,3 +74,4 @@ Changelog (rispetto alle versioni interne 1.1, 1.2, 1.3, 1.4)
 - Ottimizzazione del numero di ripetizioni dei cicli per ridurre i tempi di esecuzione (*v1.3*)
 - Major bugfixes (*v1.4*)
 - Changed CID format (*v1.5*)
+- Rimossa valutazione Media Scolastica da punteggio finale (*v1.6*)
